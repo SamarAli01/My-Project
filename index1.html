@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Code</title>
+    <link rel="shortcut icon" type="image" href="/JS.png">
+</head>
+
+<body>
+    <h2>
+        <p align="center">/*=================================scroll section active link==============================*/
+            <br>
+            let sections = document.querySelectorAll('section');<br>
+            let navLinks = document.querySelectorAll('header nav a');<br>
+            <br>
+            window.onscroll = () => {<br>
+            sections.forEach(sec => {<br>
+            let top = window.scrollY;<br>
+            let offset = sec.offsetTop - 150;<br>
+            let height = sec.offsetHeight;<br>
+            let id = sec.getAttribute('id');<br>
+
+            if(top >= offset && top < offset + height) {<br>
+                navLinks.forEach(links => {<br>
+                links.classList.remove('active');<br>
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');<br>
+                });<br>
+                };<br>
+                });<br>
+                };<br>/*================================= toggle icon navbar ==============================*/ <br>
+                let menuIcon = document.querySelector('#menu-icon'); <br>
+                let navbar = document.querySelector('.navbar'); <br>
+                <br>
+                menuIcon.onclick = () => { <br>
+                menuIcon.classList.toggle('bx-x'); <br>
+                navbar.classList.toggle('active'); <br>
+                };<br>
+                <br>
+                <br>
+                /*================================= scroll section active link ==============================*/ <br>
+                let sections = document.querySelectorAll('section'); <br>
+                let navLinks = document.querySelectorAll('header nav a'); <br>
+                <br>
+                window.onscroll = () => { <br>
+                sections.forEach(sec => { <br>
+                let top = window.scrollY; <br>
+                let offset = sec.offsetTop - 150; <br>
+                let height = sec.offsetHeight; <br>
+                let id = sec.getAttribute('id'); <br>
+                <br>
+                if (top >= offset && top < offset + height) { <br>
+                    navLinks.forEach(links => { <br>
+                    links.classList.remove('active'); <br>
+                    document.querySelector('header nav a[href*=' + id + ']').classList.add('active'); <br>
+                    });<br>
+                    };<br>
+                    });<br>
+                    /*================================= sticky navbar ==============================*/ <br>
+                    let header = document.querySelector('header');<br>
+                    <br>
+                    header.classList.toggle('sticky', window.scrollY > 100);<br>
+                    <br>
+                    /*================================= remove toggle icon and navbar when click navbar links(scroll)
+                    ==============================*/ <br>
+                    menuIcon.classList.remove('bx-x');<br>
+                    navbar.classList.remove('active');<br>
+                    };<br>
+                    <br>
+                    /*================================= scroll reveal ==============================*/ <br>
+                    ScrollReveal({<br>
+                    // reset: true, <br>
+                    distance: '80px', <br>
+                    duration: 2000,<br>
+                    delay: 200 <br>
+                    <br>
+                    }); <br>
+                    <br>
+                    ScrollReveal().reveal('.home-content, .heading', { origin: 'top' }); <br>
+                    ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin:
+                    <br> 'bottom' }); <br>
+                    ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' }); br
+                    ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' }); <br>
+                    <br>
+                    <br>
+                    /*================================= typed js ==============================*/ <br>
+                    const typed = new Typed('.multiple-text', { <br>
+                    strings: ['Web Developer','Youtuber','Berozgar XD'], <br>
+                    typeSpeed: 100, <br>
+                    backSpeed: 100, <br>
+                    backDelay: 1000, <br>
+                    loop: true <br>
+                    }); <br>
+        </p>
+    </h2>
+
+</body>
+
+</html>
